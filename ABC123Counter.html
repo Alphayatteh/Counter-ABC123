@@ -1,0 +1,484 @@
+<!DOCTYPE html<<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ABC 123 Counter </title>
+        <link rel="stylesheet" href="Counter.css">
+ 
+    </head>
+    <body>
+        <h1>Yatteh, Alpha ABC Counter</h1>
+        <table>
+            <tr>
+                <td>
+                    <fieldset id = "fsMode">
+                        <legend>Mode</legend>
+            
+                        <span><input title = "abc" name = "mode" data-mode = "a"  type="radio" onclick="countFromRadio(this)"> abc</span>
+                        <span><input title = "abc" name = "mode" data-mode = "z"  type="radio" onclick="countFromRadio(this)"> cba</span>
+                        <span><input title = "abc" name = "mode" data-mode = "A"  type="radio" onclick="countFromRadio(this)"> ABC</span>
+                        <span><input title = "abc" name = "mode" data-mode = "Z"  type="radio" onclick="countFromRadio(this)"> CBA</span>
+                        <span><input title = "abc" name = "mode" data-mode = "aA" type="radio" onclick="countFromRadio(this)"> abcABC</span>
+                        <span><input title = "abc" name = "mode" data-mode = "Aa" type="radio" onclick="countFromRadio(this)" checked> ABCabc</span>
+                        <span><input title = "abc" name = "mode" data-mode = "Zz" type="radio" onclick="countFromRadio(this)"> CBAcba</span>
+                        <span><input title = "abc" name = "mode" data-mode = "aZz" type="radio" onclick="countFromRadio(this)"> abcCBAcba</span>
+                        <span><input title="n123" name="mode" data-mode="123" type="radio" onclick="countFromRadio(this)"> 123</span>
+                        <span><input title="n123" name="mode" data-mode="321" type="radio" onclick="countFromRadio(this)"> 321</span>
+                        <input type="hidden" id = "n123Generator" value="1234"/>
+                        <input type="hidden" id = "abcGenerator" value="Aa"/>
+  
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset id = "fsHighLight">
+                        <legend>HighLight</legend>
+                        <span><input title = "abc" name = "highLight" data-highLight = "v"  type="radio" onclick="highLight(this)"> Vowel</span>
+                        <span><input title = "abc" name = "highLight" data-highLight = "c"  type="radio" onclick="highLight(this)"> Consonant</span>
+                        <span><input title = "abc" name = "highLight" data-highLight = "n"  type="radio" onclick="highLight(this)" checked> None</span>
+                        <span><input title = "abc" name = "highLight" data-highLight = "a"  type="radio" onclick="highLight(this)"> All</span>
+                        <span><input title = "n123" name = "highLight" data-highLight = "e"  type="radio" onclick="highLight(this)"> Even</span>
+                        <span><input title = "n123" name = "highLight" data-highLight = "o"  type="radio" onclick="highLight(this)"> Odd</span>
+                        <span><input title = "n123" name = "highLight" data-highLight = "5"  type="radio" onclick="highLight(this)"> *5</span>
+
+                    <input type="hidden" id = "highLightSelected" value="n"/>
+                    </fieldset>
+                    
+                </td>
+            </tr>
+        </table>
+
+        
+        
+
+        <div id = "screen-display">
+       <div class = "abc">A</div>       
+        <div class = "abc">B</div>
+        <div class = "abc">C</div>
+        <div class = "abc">D </div>
+        <div class = "abc">E</div>
+        <div class = "abc">F</div>
+        <div class = "abc">G</div>
+        <div class = "abc">H</div>
+        <div class = "abc">I</div>
+        <div class = "abc">J</div>
+        <div class = "abc">K</div>
+        <div class = "abc">L</div>
+        <div class = "abc">M</div>
+        <div class = "abc">O</div>
+        <div class = "abc">P</div>
+        <div class = "abc">Q</div>
+        <div class = "abc">R</div>
+        <div class = "abc">S</div>
+        <div class = "abc">T</div>
+        <div class = "abc">U</div>
+        <div class = "abc">V</div>
+        <div class = "abc">W</div>
+        <div class = "abc">X</div>
+        <div class = "abc">Y</div>
+        <div class = "abc">Z</div>
+        <div class = "abc">a</div>
+        <div class = "abc">b</div>
+        <div class = "abc">c</div>
+        <div class = "abc">d</div>
+        <div class = "abc">e</div>
+        <div class = "abc">f</div>
+        <div class = "abc">g</div>
+        <div class = "abc">h</div>
+        <div class = "abc">i</div>
+        <div class = "abc">j</div>
+        <div class = "abc">k</div>
+        <div class = "abc">l</div>
+        <div class = "abc">m</div>
+        <div class = "abc">o</div>
+        <div class = "abc">p</div>
+        <div class = "abc">q</div>
+        <div class = "abc">r</div>
+        <div class = "abc">s</div>
+        <div class = "abc">t</div>
+        <div class = "abc">u</div>
+        <div class = "abc">v</div>
+        <div class = "abc">w</div>
+        <div class = "abc">x</div>
+        <div class = "abc">y</div>
+        <div class = "abc">z</div>
+       
+        <div class = "n123">1</div>
+        <div class = "n123">2</div>
+        <div class = "n123">3</div>
+        <div class = "n123">4</div>
+        <div class = "n123">5</div>
+        <div class = "n123">6</div>
+        <div class = "n123">7</div>
+        <div class = "n123">8</div>
+        <div class = "n123">9</div>
+        <div class = "n123">10</div>
+        <div class = "n123">11</div>
+        <div class = "n123">12</div>
+        <div class = "n123">13</div>
+        <div class = "n123">14</div>
+        <div class = "n123">15</div>
+        <div class = "n123">16</div>
+        <div class = "n123">17</div>
+        <div class = "n123">18</div>
+        <div class = "n123">19</div>
+        <div class = "n123">20</div>
+        <div class = "n123">21</div>
+        <div class = "n123">22</div>
+        <div class = "n123">23</div>
+        <div class = "n123">24</div>
+        <div class = "n123">25</div>
+        <div class = "n123">26</div>
+        <div class = "n123">27</div>
+        <div class = "n123">28</div>
+        <div class = "n123">29</div>
+        <div class = "n123">30</div>
+        <div class = "n123">31</div>
+        <div class = "n123">32</div>
+        <div class = "n123">33</div>
+        <div class = "n123">34</div>
+        <div class = "n123">35</div>
+        <div class = "n123">36</div>
+        <div class = "n123">37</div>
+        <div class = "n123">38</div>
+        <div class = "n123">39</div>
+        <div class = "n123">40</div>
+        <div class = "n123">41</div>
+        <div class = "n123">42</div>    
+        <div class = "n123">43</div>
+        <div class = "n123">44</div>
+        <div class = "n123">45</div>
+        <div class = "n123">46</div>
+        <div class = "n123">47</div>
+        <div class = "n123">48</div>
+        <div class = "n123">49</div>
+        <div class = "n123">50</div>
+        <div class = "n123">51</div>
+        <div class = "n123">52</div>
+        <div class = "n123">53</div>
+        <div class = "n123">54</div>
+        <div class = "n123">55</div>
+        <div class = "n123">56</div>
+        <div class = "n123">57</div>
+        <div class = "n123">58</div>
+        <div class = "n123">59</div>
+        <div class = "n123">60</div>
+        <div class = "n123">61</div>
+        <div class = "n123">62</div>
+        <div class = "n123">63</div>
+        <div class = "n123">64</div>
+        <div class = "n123">65</div>
+        <div class = "n123">66</div>
+        <div class = "n123">67</div>
+        <div class = "n123">68</div>
+        <div class = "n123">69</div>
+        <div class = "n123">70</div>
+        <div class = "n123">71</div>
+        <div class = "n123">72</div>
+        <div class = "n123">73</div>
+        <div class = "n123">74</div>
+        <div class = "n123">75</div>
+        <div class = "n123">76</div>
+        <div class = "n123">77</div>
+        <div class = "n123">78</div>
+        <div class = "n123">79</div>
+        <div class = "n123">80</div>
+        <div class = "n123">81</div>
+        <div class = "n123">82</div>
+        <div class = "n123">83</div>
+        <div class = "n123">84</div>
+        <div class = "n123">85</div>
+        <div class = "n123">86</div>
+        <div class = "n123">87</div>
+        <div class = "n123">88</div>
+        <div class = "n123">89</div>
+        <div class = "n123">90</div>
+        <div class = "n123">91</div>
+        <div class = "n123">92</div>
+        <div class = "n123">93</div>
+        <div class = "n123">94</div>
+        <div class = "n123">95</div>
+        <div class = "n123">96</div>
+        <div class = "n123">97</div>
+        <div class = "n123">98</div>
+        <div class = "n123">99</div>
+        <div class = "n123">100</div>
+        <div class = "n123">101</div>
+        <div class = "n123">102</div>
+        <div class = "n123">103</div>
+        <div class = "n123">104</div>
+        <div class = "n123">105</div>
+        <div class = "n123">106</div>
+        <div class = "n123">107</div>
+        <div class = "n123">108</div>
+        <div class = "n123">109</div>
+        <div class = "n123">110</div>
+        <div class = "n123">111</div>
+        <div class = "n123">112</div>
+        <div class = "n123">113</div>
+        <div class = "n123">114</div>
+        <div class = "n123">115</div>
+        <div class = "n123">116</div>
+        <div class = "n123">117</div>
+        <div class = "n123">118</div>
+        <div class = "n123">119</div>
+        <div class = "n123">120</div>
+        <div class = "n123">121</div>
+        <div class = "n123">122</div>
+        <div class = "n123">123</div>
+        <div class = "n123">124</div>
+        <div class = "n123">125</div>
+        <div class = "n123">126</div>
+        <div class = "n123">127</div>
+        <div class = "n123">128</div>
+        <div class = "n123">129</div>
+        <div class = "n123">130</div>
+        <div class = "n123">131</div>
+        <div class = "n123">132</div>
+        <div class = "n123">133</div>
+        <div class = "n123">134</div>
+        <div class = "n123">135</div>
+        <div class = "n123">136</div>
+        <div class = "n123">137</div>
+        <div class = "n123">138</div>
+        <div class = "n123">139</div>
+        <div class = "n123">140</div>
+        <div class = "n123">141</div>
+        <div class = "n123">142</div>
+        <div class = "n123">143</div>
+        <div class = "n123">144</div>
+        <div class = "n123">145</div>
+        <div class = "n123">146</div>
+        <div class = "n123">147</div>
+        <div class = "n123">148</div>
+        <div class = "n123">149</div>
+        <div class = "n123">150</div>
+        <div class = "n123">151</div>
+        <div class = "n123">152</div>
+        <div class = "n123">153</div>
+        <div class = "n123">154</div>
+        <div class = "n123">155</div>
+        <div class = "n123">156</div>
+        <div class = "n123">157</div>
+        <div class = "n123">158</div>
+        <div class = "n123">159</div>
+        <div class = "n123">160</div>
+        <div class = "n123">161</div>
+        <div class = "n123">162</div>
+        <div class = "n123">163</div>
+        <div class = "n123">164</div>
+        <div class = "n123">165</div>
+        <div class = "n123">166</div>
+        <div class = "n123">167</div>
+        <div class = "n123">168</div>
+        <div class = "n123">169</div>
+        <div class = "n123">170</div>
+        <div class = "n123">171</div>
+        <div class = "n123">172</div>
+        <div class = "n123">173</div>
+        <div class = "n123">174</div>
+        <div class = "n123">175</div>
+        <div class = "n123">176</div>
+        <div class = "n123">177</div>
+        <div class = "n123">178</div>
+        <div class = "n123">179</div>
+        <div class = "n123">180</div>
+        <div class = "n123">181</div>
+        <div class = "n123">182</div>
+        <div class = "n123">183</div>
+        <div class = "n123">184</div>
+        <div class = "n123">185</div>
+        <div class = "n123">186</div>
+        <div class = "n123">187</div>
+        <div class = "n123">188</div>
+        <div class = "n123">189</div>
+        <div class = "n123">190</div>
+        <div class = "n123">191</div>
+        <div class = "n123">192</div>
+        <div class = "n123">193</div>
+        <div class = "n123">194</div>
+        <div class = "n123">195</div>
+        <div class = "n123">196</div>
+        <div class = "n123">197</div>
+        <div class = "n123">198</div>
+        <div class = "n123">199</div>
+        <div class = "n123">200</div>
+        <div class = "n123">201</div>
+        <div class = "n123">202</div>
+        <div class = "n123">203</div>
+        <div class = "n123">204</div>
+        <div class = "n123">205</div>
+        <div class = "n123">206</div>
+        <div class = "n123">207</div>
+        <div class = "n123">208</div>
+        <div class = "n123">209</div>
+        <div class = "n123">210</div>
+        <div class = "n123">211</div>
+        <div class = "n123">212</div>
+        <div class = "n123">213</div>
+        <div class = "n123">214</div>
+        <div class = "n123">215</div>
+        <div class = "n123">216</div>
+        <div class = "n123">217</div>
+        <div class = "n123">218</div>
+        <div class = "n123">219</div>
+        <div class = "n123">220</div>
+        <div class = "n123">221</div>
+        <div class = "n123">222</div>
+        <div class = "n123">223</div>
+        <div class = "n123">224</div>
+        <div class = "n123">225</div>
+        <div class = "n123">226</div>
+        <div class = "n123">227</div>
+        <div class = "n123">228</div>
+        <div class = "n123">229</div>
+        <div class = "n123">230</div>
+        <div class = "n123">231</div>
+        <div class = "n123">232</div>
+        <div class = "n123">233</div>
+        <div class = "n123">234</div>
+        <div class = "n123">235</div>
+        <div class = "n123">236</div>
+        <div class = "n123">237</div>
+        <div class = "n123">238</div>
+        <div class = "n123">239</div>
+        <div class = "n123">240</div>
+        <div class = "n123">241</div>
+        <div class = "n123">242</div>
+        <div class = "n123">243</div>
+        <div class = "n123">244</div>
+        <div class = "n123">245</div>
+        <div class = "n123">246</div>
+        <div class = "n123">247</div>
+        <div class = "n123">248</div>
+        <div class = "n123">249</div>
+        <div class = "n123">250</div>
+        <div class = "n123">251</div>
+        <div class = "n123">252</div>
+        <div class = "n123">253</div>
+        <div class = "n123">254</div>
+        <div class = "n123">255</div>
+        <div class = "n123">256</div>
+        <div class = "n123">257</div>
+        <div class = "n123">258</div>
+        <div class = "n123">259</div>
+        <div class = "n123">260</div>
+        <div class = "n123">261</div>
+        <div class = "n123">262</div>
+        <div class = "n123">263</div>
+        <div class = "n123">264</div>
+        <div class = "n123">265</div>
+        <div class = "n123">266</div>
+        <div class = "n123">267</div>
+        <div class = "n123">268</div>
+        <div class = "n123">269</div>
+        <div class = "n123">270</div>
+        <div class = "n123">271</div>
+        <div class = "n123">272</div>
+        <div class = "n123">273</div>
+        <div class = "n123">274</div>
+        <div class = "n123">275</div>
+        <div class = "n123">276</div>
+        <div class = "n123">277</div>
+        <div class = "n123">278</div>
+        <div class = "n123">279</div>
+        <div class = "n123">280</div>
+        <div class = "n123">281</div>
+        <div class = "n123">282</div>
+        <div class = "n123">283</div>
+        <div class = "n123">284</div>
+        <div class = "n123">285</div>
+        <div class = "n123">286</div>
+        <div class = "n123">287</div>
+        <div class = "n123">288</div>
+        <div class = "n123">289</div>
+        <div class = "n123">290</div>
+        <div class = "n123">291</div>
+        <div class = "n123">292</div>
+        <div class = "n123">293</div>
+        <div class = "n123">294</div>
+        <div class = "n123">295</div>
+        <div class = "n123">296</div>
+        <div class = "n123">297</div>
+        <div class = "n123">298</div>
+        <div class = "n123">299</div>
+        <div class = "n123">300</div>
+        <div class = "n123">301</div>
+        <div class = "n123">302</div>
+        <div class = "n123">303</div>
+        <div class = "n123">304</div>
+        <div class = "n123">305</div>
+        <div class = "n123">306</div>
+        <div class = "n123">307</div>
+        <div class = "n123">308</div>
+        <div class = "n123">309</div>
+        <div class = "n123">310</div>
+        <div class = "n123">311</div>
+        <div class = "n123">312</div>
+        <div class = "n123">313</div>
+        <div class = "n123">314</div>
+        <div class = "n123">315</div>
+        <div class = "n123">316</div>
+        <div class = "n123">317</div>
+        <div class = "n123">318</div>
+        <div class = "n123">319</div>
+        <div class = "n123">320</div>
+        <div class = "n123">321</div>
+        <div class = "n123">322</div>
+        <div class = "n123">323</div>
+        <div class = "n123">324</div>
+        <div class = "n123">325</div>
+        <div class = "n123">326</div>
+        <div class = "n123">327</div>
+        <div class = "n123">328</div>
+        <div class = "n123">329</div>
+        <div class = "n123">330</div>
+        <div class = "n123">331</div>
+        <div class = "n123">332</div>
+        <div class = "n123">333</div>
+        <div class = "n123">334</div>
+        <div class = "n123">335</div>
+        <div class = "n123">336</div>
+        <div class = "n123">337</div>
+        <div class = "n123">338</div>
+        <div class = "n123">339</div>
+        <div class = "n123">340</div>
+        <div class = "n123">341</div>
+        <div class = "n123">342</div>
+        <div class = "n123">343</div>
+        <div class = "n123">344</div>
+        <div class = "n123">345</div>
+        <div class = "n123">346</div>
+        <div class = "n123">347</div>
+        <div class = "n123">348</div>
+        <div class = "n123">349</div>
+        <div class = "n123">350</div>
+        <div class = "n123">351</div>
+        <div class = "n123">352</div>
+        <div class = "n123">353</div>
+        <div class = "n123">354</div>
+        <div class = "n123">355</div>
+        <div class = "n123">356</div>
+        <div class = "n123">357</div>
+        <div class = "n123">358</div>
+        <div class = "n123">359</div>
+        <div class = "n123">360</div>
+
+        </div>
+        <div>Row Count: <span id = "rowCount">0</span></div>
+
+        <div class="developer">Developer: Yatteh, Alpha
+                <span id ="counter">##</span>
+        </div>
+      <script src="counter.js" ></script> 
+     <script src="ABC123Counter.js"></script>
+               
+
+               
+
+     </body>
+</html>
